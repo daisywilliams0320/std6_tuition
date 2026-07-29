@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Year 6 Science – Speed / Kelajuan</title>
+<style>
+:root{
+  --navy:#15324b;--blue:#2f80ed;--cyan:#dff4ff;--teal:#19a89b;
+  --yellow:#ffd166;--orange:#ff8b5c;--cream:#fffaf0;--white:#fff;
+  --text:#233549;--muted:#64768a;--line:#dbe6ef;--green:#15835c;
+  --green-bg:#e7f8f0;--red:#bd3d3d;--red-bg:#ffeded;
+  --shadow:0 14px 34px rgba(21,50,75,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:Arial,"Helvetica Neue",sans-serif;color:var(--text);
+  background:
+  radial-gradient(circle at 10% 4%,rgba(47,128,237,.10),transparent 22rem),
+  radial-gradient(circle at 90% 18%,rgba(25,168,155,.09),transparent 20rem),
+  var(--cream);line-height:1.6
+}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+header{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;
+  justify-content:space-between;padding:12px clamp(16px,5vw,64px);
+  background:rgba(255,250,240,.94);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(21,50,75,.09)
+}
+.brand{display:flex;gap:11px;align-items:center}
+.logo{width:45px;height:45px;display:grid;place-items:center;border-radius:14px;background:var(--cyan);font-size:24px}
+.brand strong,.brand small{display:block}.brand small{font-size:.78rem;color:var(--muted)}
+nav{display:flex;gap:6px;align-items:center}
+nav a,nav button{padding:9px 12px;border:0;border-radius:11px;background:transparent;font-weight:800;cursor:pointer}
+nav a:hover,nav button:hover{background:var(--cyan)}
+.menu{display:none;border:0;background:transparent;font-size:1.5rem}
+.wrap{width:min(1120px,calc(100% - 30px));margin:auto}
+.hero{min-height:78vh;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding:65px 0}
+.badge{display:inline-block;padding:7px 11px;border-radius:999px;background:var(--yellow);font-size:.78rem;font-weight:900;letter-spacing:.08em}
+h1{font-size:clamp(3rem,7vw,6.1rem);line-height:.95;margin:14px 0;color:var(--navy);letter-spacing:-.05em}
+h1 span{display:block;color:var(--blue);font-size:.5em;letter-spacing:-.01em}
+.hero p{font-size:clamp(1rem,2vw,1.2rem);color:var(--muted);max-width:620px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:11px 18px;border:2px solid transparent;border-radius:14px;font-weight:900;cursor:pointer}
+.primary{background:var(--blue);color:#fff;box-shadow:0 10px 23px rgba(47,128,237,.24)}
+.secondary{background:#fff;border-color:var(--line)}
+.speed-card{padding:30px;border-radius:30px;background:linear-gradient(145deg,#fff,#edf8ff);box-shadow:var(--shadow);text-align:center}
+.road{position:relative;height:190px;border-radius:22px;overflow:hidden;background:#3d4f5e}
+.road:before{content:"";position:absolute;left:0;right:0;top:50%;border-top:8px dashed white;opacity:.8}
+.car{position:absolute;top:50%;left:12%;transform:translateY(-58%);font-size:4.4rem;animation:drive 4s ease-in-out infinite}
+.speed-lines{font-size:2rem;color:var(--yellow)}
+@keyframes drive{0%,100%{left:10%}50%{left:68%}}
+section{padding:76px 0}
+.section-head{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;margin-bottom:28px}
+.num{width:55px;height:55px;display:grid;place-items:center;border-radius:17px;background:var(--yellow);font-weight:900}
+.kicker{margin:0;color:var(--blue);font-size:.76rem;font-weight:900;letter-spacing:.15em}
+h2{margin:3px 0;color:var(--navy);font-size:clamp(2rem,5vw,3.5rem);line-height:1.05}
+.section-head p{margin:0;color:var(--muted)}
+.definition{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:25px;border-radius:23px;background:var(--navy);color:#fff;box-shadow:var(--shadow)}
+.definition .icon{font-size:3rem}.definition h3,.definition p{margin:0 0 5px}
+.bm{font-style:italic;opacity:.8}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:18px}
+.card{padding:21px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 8px 20px rgba(21,50,75,.06)}
+.card h3{margin:8px 0 6px;color:var(--navy)}.card p{margin:0;color:var(--muted)}
+.formula{margin-top:20px;padding:25px;border-radius:23px;background:#fff;box-shadow:var(--shadow)}
+.triangle{width:230px;margin:18px auto;text-align:center;font-weight:900}
+.triangle .top{padding:15px;border-radius:16px 16px 0 0;background:var(--yellow);font-size:1.4rem}
+.triangle .bottom{display:grid;grid-template-columns:1fr 1fr}
+.triangle .bottom span{padding:15px;background:var(--cyan);border:1px solid #c8e8fa}
+.triangle .bottom span:first-child{border-radius:0 0 0 16px}.triangle .bottom span:last-child{border-radius:0 0 16px 0}
+.formula-lines{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.formula-lines div{padding:15px;border-radius:14px;background:#f6fafc;text-align:center;font-weight:800}
+.units{width:100%;border-collapse:collapse;margin-top:16px}
+.units th,.units td{padding:12px;border:1px solid var(--line);text-align:left}.units th{background:var(--cyan)}
+.example{margin-top:20px;padding:22px;border-left:6px solid var(--teal);border-radius:16px;background:#effbf8}
+.calc-box{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.calc-box span{padding:13px;border-radius:12px;background:white;text-align:center;font-weight:800}
+.question{margin-bottom:16px;padding:22px;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:0 8px 20px rgba(21,50,75,.06)}
+.question h3{margin:0 0 4px;color:var(--navy)}
+.qtag{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--yellow);font-weight:900;margin-bottom:10px}
+.subq{margin-top:14px;padding:16px;border-radius:15px;background:#f8fbfd}
+.subq strong{color:var(--navy)}
+details{margin-top:10px;border:1px solid var(--line);border-radius:13px;background:#fff;overflow:hidden}
+summary{padding:13px 15px;cursor:pointer;font-weight:900;color:var(--teal)}
+.answer{padding:0 15px 15px}
+.answer p{margin:5px 0}
+.route{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:18px 0}
+.point{width:50px;height:50px;display:grid;place-items:center;border-radius:50%;background:var(--navy);color:#fff;font-weight:900}
+.leg{padding:10px 15px;border-radius:999px;background:var(--cyan);font-weight:800}
+.data-table{width:100%;border-collapse:collapse;margin:15px 0}.data-table th,.data-table td{padding:12px;border:1px solid var(--line);text-align:center}.data-table th{background:var(--navy);color:#fff}
+.answer-key{padding:24px;border-radius:22px;background:var(--navy);color:#fff}
+.answer-key h3{margin-top:0}.answer-key li{margin:7px 0}
+.notice{margin:18px 0;padding:15px;border-radius:14px;background:#fff4d7;border-left:5px solid var(--yellow)}
+footer{padding:26px;text-align:center;background:var(--navy);color:rgba(255,255,255,.78)}
+#topBtn{position:fixed;right:17px;bottom:17px;width:47px;height:47px;border:0;border-radius:15px;background:var(--blue);color:white;font-weight:900;display:none;cursor:pointer}
+.fade{animation:fade .5s ease}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:850px){.hero{grid-template-columns:1fr;text-align:center}.hero p{margin:auto}.actions{justify-content:center}.grid,.formula-lines{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.menu{display:block}nav{position:absolute;right:14px;top:68px;display:none;flex-direction:column;align-items:stretch;background:#fff;padding:10px;border-radius:15px;box-shadow:var(--shadow)}nav.open{display:flex}.grid,.formula-lines,.calc-box{grid-template-columns:1fr}.section-head{grid-template-columns:1fr}.definition{grid-template-columns:1fr;text-align:center}.hero{padding-top:45px}}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="#top"><span class="logo">🏎️</span><span><strong>Year 6 Science</strong><small>Speed · Kelajuan</small></span></a>
+  <button class="menu" id="menuBtn">☰</button>
+  <nav id="nav">
+    <a href="#notes">Notes</a><a href="#questions">Questions</a><a href="#answers">Answer Key</a>
+    <button id="openAll">Show All Answers</button>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero wrap">
+  <div>
+    <span class="badge">SCIENCE MODULE 10 · UNIT 7</span>
+    <h1>Speed<span>Kelajuan</span></h1>
+    <p>Learn how distance and time determine how fast an object moves, then answer every question from the worksheet.</p>
+    <div class="actions"><a class="btn primary" href="#notes">Start Notes</a><a class="btn secondary" href="#questions">Go to Questions</a></div>
+  </div>
+  <div class="speed-card">
+    <div class="road"><div class="car">🚗</div></div>
+    <h3>Speed = Distance ÷ Time</h3>
+    <p class="bm">Kelajuan = Jarak ÷ Masa</p>
+    <div class="speed-lines">➝ ➝ ➝</div>
+  </div>
+</section>
+
+<section id="notes">
+<div class="wrap">
+  <div class="section-head"><span class="num">01</span><div><p class="kicker">FIRST PART</p><h2>Learning Notes</h2><p>Simple bilingual notes suitable for Malaysian Year 6 pupils.</p></div></div>
+
+  <div class="definition">
+    <div class="icon">🚙</div>
+    <div><h3>What is speed?</h3><p><strong>Speed is a measurement of how fast or slow an object moves from one place to another.</strong></p><p class="bm"><strong>Kelajuan ialah ukuran cepat atau lambat sesuatu objek bergerak dari satu tempat ke tempat yang lain.</strong></p></div>
+  </div>
+
+  <div class="grid">
+    <article class="card"><div>🏃</div><h3>Moving objects have speed</h3><p>Any object that is moving has speed.</p><p class="bm">Setiap objek yang bergerak mempunyai kelajuan.</p></article>
+    <article class="card"><div>🚲</div><h3>Different speeds</h3><p>Different objects can move at different speeds.</p><p class="bm">Objek yang berbeza bergerak pada kelajuan yang berbeza.</p></article>
+    <article class="card"><div>⚡</div><h3>High and low speed</h3><p>High speed means faster movement. Low speed means slower movement.</p><p class="bm">Kelajuan tinggi bermaksud bergerak lebih laju.</p></article>
+    <article class="card"><div>🛣️</div><h3>Same time</h3><p>A faster object travels further in the same time.</p><p class="bm">Objek lebih laju bergerak lebih jauh dalam masa yang sama.</p></article>
+    <article class="card"><div>⏱️</div><h3>Same distance</h3><p>A faster object needs a shorter time to travel the same distance.</p><p class="bm">Objek lebih laju mengambil masa lebih singkat untuk jarak yang sama.</p></article>
+    <article class="card"><div>🔗</div><h3>Relationship</h3><p>Speed is related to distance travelled and time taken.</p><p class="bm">Kelajuan berkait dengan jarak dan masa.</p></article>
+  </div>
+
+  <div class="formula">
+    <h3>Calculating Speed · Mengira Kelajuan</h3>
+    <div class="triangle"><div class="top">DISTANCE / JARAK</div><div class="bottom"><span>SPEED<br>KELAJUAN</span><span>TIME<br>MASA</span></div></div>
+    <div class="formula-lines">
+      <div>Speed = Distance ÷ Time<br><span class="bm">Kelajuan = Jarak ÷ Masa</span></div>
+      <div>Distance = Speed × Time<br><span class="bm">Jarak = Kelajuan × Masa</span></div>
+      <div>Time = Distance ÷ Speed<br><span class="bm">Masa = Jarak ÷ Kelajuan</span></div>
+    </div>
+
+    <h3 style="margin-top:24px">Units for Speed · Unit Kelajuan</h3>
+    <table class="units"><thead><tr><th>Unit</th><th>Symbol</th><th>Suitable example</th></tr></thead><tbody>
+      <tr><td>centimetres per second</td><td>cm/s</td><td>Slow, small moving objects</td></tr>
+      <tr><td>metres per second</td><td>m/s</td><td>Running or cycling</td></tr>
+      <tr><td>kilometres per hour</td><td>km/h</td><td>Cars, buses and long journeys</td></tr>
+    </tbody></table>
+
+    <div class="example"><h3>Example Calculation · Contoh Pengiraan</h3>
+      <p>A bus takes 4 hours to travel 360 km.</p>
+      <div class="calc-box"><span>Distance = 360 km</span><span>Time = 4 hours</span><span>Speed = 360 ÷ 4 = <strong>90 km/h</strong></span></div>
+      <p class="bm">Sebuah bas mengambil 4 jam untuk bergerak sejauh 360 km. Kelajuannya ialah 90 km/j.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="questions">
+<div class="wrap">
+  <div class="section-head"><span class="num">02</span><div><p class="kicker">SECOND PART</p><h2>All Worksheet Questions</h2><p>Every clearly visible question from the attached pages is included below.</p></div></div>
+
+  <article class="question">
+    <span class="qtag">1</span>
+    <h3>100-metre Sprint Training</h3>
+    <p>The diagram shows a group of pupils having a 100-metre sprint training for the school sports day.</p>
+    <p class="bm">Rajah menunjukkan sekumpulan murid sedang menjalani latihan lumba lari 100 meter untuk hari sukan sekolah.</p>
+
+    <div class="subq"><strong>(a) Who is the fastest to reach the finishing line?</strong><br><span class="bm">Siapakah yang paling cepat sampai di garisan penamat?</span>
+      <details><summary>Show answer</summary><div class="answer"><p><strong>Asher.</strong></p></div></details>
+    </div>
+
+    <div class="subq"><strong>(b) State the meaning of speed.</strong><br><span class="bm">Nyatakan maksud kelajuan.</span>
+      <details><summary>Show answer</summary><div class="answer"><p>Speed is the measurement of how fast or slow an object moves.</p><p class="bm">Kelajuan ialah ukuran cepat atau lambat sesuatu objek bergerak.</p></div></details>
+    </div>
+
+    <div class="subq"><strong>(c) Does Mr Ahmad have speed? Give your reason.</strong><br><span class="bm">Adakah Encik Ahmad mempunyai kelajuan? Berikan alasan kamu.</span>
+      <details><summary>Show answer</summary><div class="answer"><p><strong>No.</strong> Mr Ahmad is standing still and is not moving, so he has no speed.</p><p class="bm"><strong>Tidak.</strong> Encik Ahmad berdiri diam dan tidak bergerak, maka dia tidak mempunyai kelajuan.</p></div></details>
+    </div>
+
+    <div class="subq"><strong>(d) Amin crossed the finishing line in 40.5 seconds. What is the unit speed of Amin's movement? Put a tick (✓) in the correct box.</strong>
+      <p>Options shown: metre per second (m/s), kilometres per minute, centimetres per second (cm/s).</p>
+      <details><summary>Show answer</summary><div class="answer"><p>Correct unit: <strong>metre per second (m/s)</strong>.</p><p>Amin's speed = 100 m ÷ 40.5 s = <strong>2.47 m/s</strong> (approximately).</p><p class="bm">Unit yang betul ialah meter per saat (m/s). Kelajuan Amin kira-kira 2.47 m/s.</p></div></details>
+    </div>
+  </article>
+
+  <article class="question">
+    <span class="qtag">2</span>
+    <h3>Two Pupils Cycling</h3>
+    <p>Two pupils are cycling with different speeds from location A to location B.</p>
+    <p class="bm">Dua orang murid mengayuh basikal dengan kelajuan yang berbeza dari lokasi A ke lokasi B.</p>
+    <div class="notice"><strong>Given:</strong> Ahmad's speed = 20 m/s; Kok Meng's speed = 10 m/s.</div>
+
+    <div class="subq"><strong>(a) Who cycles faster?</strong><br><span class="bm">Siapakah yang mengayuh basikal dengan lebih laju?</span>
+      <details><summary>Show answer</summary><div class="answer"><p><strong>Ahmad</strong>, because 20 m/s is greater than 10 m/s.</p></div></details>
+    </div>
+
+    <div class="subq"><strong>(b) Who is the first to reach location B?</strong><br><span class="bm">Siapakah yang mula-mula sekali sampai ke lokasi B?</span>
+      <details><summary>Show answer</summary><div class="answer"><p><strong>Ahmad.</strong> He moves at a higher speed.</p></div></details>
+    </div>
+
+    <div class="subq"><strong>(c) Compare the time required by Ahmad and Kok Meng to arrive at location B.</strong><br><span class="bm">Bandingkan antara masa yang diperlukan oleh Ahmad dengan Kok Meng untuk tiba di lokasi B.</span>
+      <details><summary>Show answer</summary><div class="answer"><p>Ahmad takes a <strong>shorter time</strong> than Kok Meng to reach location B.</p><p class="bm">Ahmad mengambil masa yang lebih singkat berbanding Kok Meng.</p></div></details>
+    </div>
+  </article>
+
+  <article class="question">
+    <span class="qtag">3</span>
+    <h3>Car Journey Investigation</h3>
+    <p>The diagram shows the plan of an area. The table shows the time taken by a car to move specific distances.</p>
+    <p class="bm">Rajah menunjukkan pelan sebuah kawasan. Jadual menunjukkan masa yang diambil oleh sebuah kereta untuk bergerak pada jarak tertentu.</p>
+
+    <div class="route">
+      <span class="point">P</span><span class="leg">PQ: 250 km · 5 h</span><span class="point">Q</span>
+      <span class="leg">QR: 420 km · 7 h</span><span class="point">R</span>
+      <span class="leg">RS: 480 km · 6 h</span><span class="point">S</span>
+    </div>
+    <table class="data-table"><thead><tr><th>Route</th><th>Distance</th><th>Time Taken</th><th>Speed</th></tr></thead><tbody>
+      <tr><td>PQ</td><td>250 km</td><td>5 hours</td><td>50 km/h</td></tr>
+      <tr><td>QR</td><td>420 km</td><td>7 hours</td><td>60 km/h</td></tr>
+      <tr><td>RS</td><td>480 km</td><td>6 hours</td><td>80 km/h</td></tr>
+    </tbody></table>
+
+    <div class="subq"><strong>(a) What is the purpose of this investigation?</strong><br><span class="bm">Apakah tujuan penyiasatan ini?</span>
+      <details><summary>Show answer</summary><div class="answer"><p>To investigate the relationship between <strong>distance travelled</strong> and <strong>time taken</strong>.</p><p class="bm">Untuk menyiasat hubungan antara jarak yang dilalui dengan masa yang diambil.</p></div></details>
+    </div>
+
+    <div class="subq"><strong>(b) State the following variables.</strong><br>
+      i. Manipulated variable<br>ii. Responding variable
+      <details><summary>Show answer</summary><div class="answer"><p>i. Manipulated variable: <strong>Distance travelled</strong>.</p><p>ii. Responding variable: <strong>Time taken</strong>.</p><p class="bm">Pemboleh ubah dimanipulasi: jarak. Pemboleh ubah bergerak balas: masa yang diambil.</p></div></details>
+    </div>
+
+    <div class="subq"><strong>(c) Calculate the speed of the car for any of the distances given above.</strong><br><span class="bm">Kira kelajuan pergerakan kenderaan ini bagi sebarang jarak yang diberikan di atas.</span>
+      <details><summary>Show answer</summary><div class="answer">
+        <p>Any one of these is acceptable:</p>
+        <p>PQ: 250 ÷ 5 = <strong>50 km/h</strong></p>
+        <p>QR: 420 ÷ 7 = <strong>60 km/h</strong></p>
+        <p>RS: 480 ÷ 6 = <strong>80 km/h</strong></p>
+      </div></details>
+    </div>
+
+    <div class="subq"><strong>(d) What is the total distance travelled by this vehicle?</strong><br><span class="bm">Berapakah jumlah jarak yang dilalui oleh kenderaan ini?</span>
+      <details><summary>Show answer</summary><div class="answer"><p>250 km + 420 km + 480 km = <strong>1,150 km</strong>.</p></div></details>
+    </div>
+
+    <div class="subq"><strong>(e) State the relationship between the speed and the time taken to move from location A to location B.</strong>
+      <p>Complete: “The ______ the vehicle moves, the ______ will be the time taken to move from location A to location B.”</p>
+      <details><summary>Show answer</summary><div class="answer"><p>The <strong>faster</strong> the vehicle moves, the <strong>shorter</strong> will be the time taken.</p><p class="bm">Semakin laju kenderaan bergerak, semakin singkat masa yang diambil.</p></div></details>
+    </div>
+  </article>
+</div>
+</section>
+
+<section id="answers">
+<div class="wrap">
+  <div class="section-head"><span class="num">03</span><div><p class="kicker">TEACHER REFERENCE</p><h2>Quick Answer Key</h2></div></div>
+  <div class="answer-key">
+    <h3>Question 1</h3><ol><li>(a) Asher</li><li>(b) Measurement of how fast or slow an object moves</li><li>(c) No; Mr Ahmad is stationary</li><li>(d) m/s; Amin's speed ≈ 2.47 m/s</li></ol>
+    <h3>Question 2</h3><ol><li>(a) Ahmad</li><li>(b) Ahmad</li><li>(c) Ahmad takes a shorter time</li></ol>
+    <h3>Question 3</h3><ol><li>(a) Relationship between distance and time</li><li>(b) Manipulated: distance; responding: time taken</li><li>(c) 50 km/h, 60 km/h or 80 km/h</li><li>(d) 1,150 km</li><li>(e) Faster speed → shorter time</li></ol>
+  </div>
+</div>
+</section>
+</main>
+
+<footer>Year 6 Science · Speed / Kelajuan Interactive Learning Page</footer>
+<button id="topBtn">↑</button>
+
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const nav=document.getElementById('nav');
+menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+
+const allDetails=[...document.querySelectorAll('details')];
+document.getElementById('openAll').addEventListener('click',function(){
+  const shouldOpen=allDetails.some(d=>!d.open);
+  allDetails.forEach(d=>d.open=shouldOpen);
+  this.textContent=shouldOpen?'Hide All Answers':'Show All Answers';
+});
+
+document.querySelectorAll('details').forEach(d=>{
+  d.addEventListener('toggle',()=>{
+    if(d.open)d.querySelector('.answer')?.classList.add('fade');
+  });
+});
+
+const topBtn=document.getElementById('topBtn');
+window.addEventListener('scroll',()=>topBtn.style.display=window.scrollY>650?'block':'none');
+topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+</body>
+</html>
